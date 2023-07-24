@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Text('Ishwar Chaudhary'),
-  ));
+  //material app widget is the root widget of the app
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Text('Ishwar Chaudhary'),
+        ),
+      ),
+    ),
+  );
 }
