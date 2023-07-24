@@ -10,10 +10,18 @@ void main() {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.teal, Color.fromARGB(255, 237, 174, 151)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
           child: const Center(
-            child: Text('Ishwar Chaudhary'),
+            child: Text(
+              'Ishwar Chaudhary',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 28.0,
+              ),
+            ),
           ),
         ),
       ),
