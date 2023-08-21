@@ -17,14 +17,14 @@ class GradientContainer extends StatelessWidget {
         gradient: LinearGradient(
           colors: const [
             Color.fromARGB(255, 71, 190, 178),
-            Color.fromARGB(255, 237, 174, 151)
+            Color.fromARGB(255, 237, 174, 151),
           ],
           begin: beginColor,
           end: endColor,
         ),
       ),
       child: const Center(
-        child: WelcomeWidget(),
+        child: WelcomeWidget('HAH COOL!'),
       ),
     );
   }
