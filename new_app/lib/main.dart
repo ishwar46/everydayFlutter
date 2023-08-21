@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   //material app widget is the root widget of the app
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 73, 172, 162),
         body: GradientContainer(), //Constructor function
@@ -13,6 +13,10 @@ void main() {
 }
 
 class GradientContainer extends StatelessWidget {
+  //Adding Constructor function
+  //GradientContainer({key}): super(key: key);
+  const GradientContainer({super.key});
+
   @override
   Widget build(context) {
     return Container(
