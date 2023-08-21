@@ -11,6 +11,7 @@ class WelcomeWidget extends StatelessWidget {
       text,
       style: const TextStyle(
         color: Colors.white,
+        fontWeight: FontWeight.bold,
         fontSize: 25.0,
       ),
     );
