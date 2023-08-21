@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_app/welcome_text_widget.dart';
 
 class GradientContainer extends StatelessWidget {
   //Adding Constructor function
@@ -16,13 +17,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: Text(
-          'Ishwar Chaudhary',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28.0,
-          ),
-        ),
+        child: WelcomeWidget(),
       ),
     );
   }
