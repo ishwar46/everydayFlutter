@@ -15,6 +15,10 @@ class GradientContainer extends StatelessWidget {
 
   final Color color1;
   final Color color2;
+
+  void _rollDice() {
+    //Role a dice
+  }
   @override
   Widget build(context) {
     return Container(
@@ -26,8 +30,23 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        //child: WelcomeWidget('HAH COOL!'),
-        child: Image.asset('assets/img/dice-2.png', width: 200, height: 200),
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/img/dice-2.png',
+              width: 200,
+            ),
+            //child: WelcomeWidget('HAH COOL!'),
+            TextButton(
+              onPressed: _rollDice, //anonymous function
+              child: const Text('Roll Dice',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
