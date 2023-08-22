@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_app/welcome_text_widget.dart';
 
 //variables for color gradient
 var beginColor = Alignment.topLeft;
@@ -26,8 +25,9 @@ class GradientContainer extends StatelessWidget {
           end: endColor,
         ),
       ),
-      child: const Center(
-        child: WelcomeWidget('HAH COOL!'),
+      child: Center(
+        //child: WelcomeWidget('HAH COOL!'),
+        child: Image.asset('assets/img/dice-2.png', width: 200, height: 200),
       ),
     );
   }
