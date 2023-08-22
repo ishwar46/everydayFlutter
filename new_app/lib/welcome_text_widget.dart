@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class WelcomeWidget extends StatelessWidget {
-  const WelcomeWidget({super.key});
+  const WelcomeWidget(this.text, {super.key}); //outputText = text;
+
+  final String text;
+
   @override
   Widget build(context) {
-    return const Text(
-      'Welcome to EveryDay Flutter',
-      style: TextStyle(
+    return Text(
+      text,
+      style: const TextStyle(
         color: Colors.white,
+        fontWeight: FontWeight.bold,
         fontSize: 25.0,
       ),
     );
