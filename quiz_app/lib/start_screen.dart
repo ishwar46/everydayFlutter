@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/text_widget.dart';
 
-class ImageScreen extends StatefulWidget {
-  const ImageScreen({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
-  @override
-  State<ImageScreen> createState() => _ImageScreenState();
-}
-
-class _ImageScreenState extends State<ImageScreen> {
   @override
   Widget build(context) {
     return Center(
@@ -21,7 +16,7 @@ class _ImageScreenState extends State<ImageScreen> {
           ),
           const SizedBox(height: 30),
           const TextWidget('Learn Flutter the fun way!'),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           ElevatedButton(
