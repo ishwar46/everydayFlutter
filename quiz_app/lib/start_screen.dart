@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/text_widget.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -30,9 +32,7 @@ class StartScreen extends StatelessWidget {
           ),
           OutlinedButton.icon(
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-            onPressed: () {
-              //TODO: Navigate to the quiz screen
-            },
+            onPressed: startQuiz,
             icon: const Icon(Icons.start),
             label: const Text("Start Quiz"),
           )
