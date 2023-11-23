@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'data/questions.dart';
 import 'widgets/answers_button.dart';
 
 class QuestionScreen extends StatefulWidget {
@@ -12,6 +13,8 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreen extends State<QuestionScreen> {
+  //accessing the list of question index 0
+  final currentQuestion = questions[0];
   @override
   Widget build(context) {
     return SizedBox(
@@ -19,9 +22,9 @@ class _QuestionScreen extends State<QuestionScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            "Questions....",
-            style: TextStyle(
+          Text(
+            currentQuestion.text,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
             ),
@@ -30,19 +33,25 @@ class _QuestionScreen extends State<QuestionScreen> {
             height: 30.0,
           ),
           AnswerButton(
-            ansswerText: 'Hello',
+            ansswerText: currentQuestion.answers[0],
             onTap: () {
               print('OK');
             },
           ),
           AnswerButton(
-            ansswerText: 'Hello',
+            ansswerText: currentQuestion.answers[1],
             onTap: () {
               print('OK');
             },
           ),
           AnswerButton(
-            ansswerText: 'Hello',
+            ansswerText: currentQuestion.answers[2],
+            onTap: () {
+              print('OK');
+            },
+          ),
+          AnswerButton(
+            ansswerText: currentQuestion.answers[3],
             onTap: () {
               print('OK');
             },
