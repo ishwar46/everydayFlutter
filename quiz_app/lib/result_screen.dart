@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.chosenAnswers});
-
+  const ResultsScreen(
+      {super.key, required this.chosenAnswers, required this.onRestart});
+  final void Function() onRestart;
   final List<String> chosenAnswers;
 
   List<Map<String, Object>> getSummaryData() {
@@ -23,23 +25,51 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summaryData = getSummaryData();
+    final numTotalQuestions = questions.length;
+    final numCorrectQuestions = summaryData
+        .where((data) => data['user_answer'] == ['correct_aanswer'])
+        .length;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
         margin: const EdgeInsets.all(40),
         child: Column(
           children: [
-            const Text('You answered X and Y questions correctly'),
+            const SizedBox(
+              height: 50,
+            ),
+            Text(
+              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600),
+            ),
             const SizedBox(
               height: 20,
             ),
-            const Text('Litst of ansers ad questions'),
+            QuestionsSummary(summaryData),
             const SizedBox(
               height: 20,
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Restart Quiz'),
+            TextButton.icon(
+              onPressed: onRestart,
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.green),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+                textStyle: MaterialStateProperty.all(const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                )),
+                padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 24)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5))),
+              ),
+              icon: const Icon(Icons.refresh),
+              label: const Text('Restart Quiz!'),
             )
           ],
         ),
