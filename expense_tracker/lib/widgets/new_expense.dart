@@ -34,6 +34,41 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  void _submitExpenseData() {
+    final enteredAmount = double.tryParse(_amountController.text);
+    final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
+    if (_titleController.text.trim().isEmpty ||
+        amountIsInvalid ||
+        _selectedDate == null) {
+      //show error message
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Error'),
+          content: const Text('Please enter a valid title, amount and date!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(ctx).pop();
+              },
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                },
+                icon: const Icon(
+                  Icons.close,
+                  color: Colors.red,
+                ),
+                label: const Text("Close"),
+              ),
+            )
+          ],
+        ),
+      );
+      return;
+    }
+  }
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -109,10 +144,10 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedCategory = value;
                     });
                   }),
+              const Spacer(),
               ElevatedButton(
                 onPressed: () {
-                  // print(_titleController.text);
-                  // print(_amountController.text);
+                  _submitExpenseData();
                 },
                 child: const Text("Save Expense"),
               ),

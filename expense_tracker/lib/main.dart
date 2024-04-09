@@ -3,6 +3,9 @@ import 'package:expense_tracker/widgets/expenses.dart';
 
 void main() {
   runApp(
-    const MaterialApp(home: Expenses()),
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Expenses(),
+    ),
   );
 }
