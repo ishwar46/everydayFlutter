@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class UIUpdatesDemo extends StatefulWidget {
@@ -5,7 +6,9 @@ class UIUpdatesDemo extends StatefulWidget {
 
   @override
   StatefulElement createElement() {
-    print('UIUpdatesDemo CREATEELEMENT called');
+    if (kDebugMode) {
+      print('UIUpdatesDemo CREATEELEMENT called');
+    }
     return super.createElement();
   }
 
