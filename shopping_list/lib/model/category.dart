@@ -18,4 +18,9 @@ class Category {
 
   final String title;
   final Color color;
+
+  @override
+  String toString() {
+    return title;
+  }
 }

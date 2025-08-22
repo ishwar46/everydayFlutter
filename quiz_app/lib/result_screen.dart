@@ -57,15 +57,15 @@ class ResultsScreen extends StatelessWidget {
             TextButton.icon(
               onPressed: onRestart,
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.green),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                textStyle: MaterialStateProperty.all(const TextStyle(
+                backgroundColor: WidgetStateProperty.all(Colors.green),
+                foregroundColor: WidgetStateProperty.all(Colors.white),
+                textStyle: WidgetStateProperty.all(const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                 )),
-                padding: MaterialStateProperty.all(
+                padding: WidgetStateProperty.all(
                     const EdgeInsets.symmetric(vertical: 12, horizontal: 24)),
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                shape: WidgetStateProperty.all(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5))),
               ),
               icon: const Icon(Icons.refresh),
