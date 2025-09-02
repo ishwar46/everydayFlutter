@@ -8,6 +8,8 @@
 	<string>Take you favorite place image.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app uses microphone to record sound of you favorite place video.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs location to add place.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
